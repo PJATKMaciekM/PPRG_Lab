@@ -25,7 +25,7 @@ int main(){
         int sum = SumOfDivisors(i);
         if((sum >= x) && (sum <= y)){
             if((SumOfDivisors(sum) == i) && (sum != i) && (i < sum)){
-                cout << "Para liczb zaprzyjaznionych to: " << i << " oraz " << sum << endl;
+                cout << "Pair of Amicable Numbers: " << i << " and " << sum << endl;
             }
         }
     }
