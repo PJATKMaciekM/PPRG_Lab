@@ -64,15 +64,16 @@ int main(){
 
     cin >> a >> b >> n;
     t1 = chrono::high_resolution_clock::now(); 
-    binomial_iter(a,b,n); //Funkcja iteracyjna ma granice stostosowalnosci a = 15, b = 15, n = 6
+    binomial_iter(a,b,n); //Funkcja iteracyjna przestaje zwracac poprawne wyniki przy a = 15, b = 15, n = 6
     t2 = chrono::high_resolution_clock::now();
     ms_double = t2 - t1;
     cout << "Newton iteracja czas: " << ms_double.count() << endl;
     t1 = chrono::high_resolution_clock::now();
-    binomial_rec(a,b,n); // Funkcja rekurencyjna ma granice stosowalnosci a i b = 2147483646, n = 13
+    binomial_rec(a,b,n); // Funkcja rekurencyjna przestaje zwracac poprawne wyniki przy a i b = 2147483646, n = 13
     t2 = chrono::high_resolution_clock::now();
     ms_double = t2 - t1;
     cout << "Newton rekurencja czas: " << ms_double.count() << endl;
+    // W wiekszosic przypadkow funkcja iterujaca potrzebuje 2 razy wiecej czasu na rozwiazanie niz funkcja rekurencyjna 
 
     cin >> a >> b;
     t1 = chrono::high_resolution_clock::now(); 
@@ -85,7 +86,8 @@ int main(){
     t2 = chrono::high_resolution_clock::now();
     ms_double = t2 - t1;
     cout << "Euklides rekurencja czas: " << ms_double.count() << endl;
-    //nie udalo mi sie znalezc granic stosowalnosci dla tych algorytmow, przestaja dzialac przy wartosci intiger overflow
+    //Obie funkcje przestaja zwracac poprawne wyniki przy wartosci bliskiej intiger overflow,
+    //ale funkcja iterujaca zajmuje od 4 do 7 razy dluzej niz funkcja rekurencyjna
     
     return 0;
 }
