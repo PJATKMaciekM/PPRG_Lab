@@ -15,7 +15,6 @@ int main(){
         ans = RPS[N];
         cout << "Wprowadz (kamien, papier albo nozyce): " << endl;
         cin >> gss;
-        cout << ans << endl;
         if(gss == ans){
             cout << "Remis!" << endl;
         }else if (((gss == RPS[0])&&(ans == RPS[2])) || ((gss == RPS[1])&&(ans == RPS[0])) || (gss == RPS[2])&&(ans == RPS[1]))
